@@ -1,0 +1,2588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WSW Pathway to Success</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --bg: #03060F;
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --glass-hover: rgba(255,255,255,0.07);
+  --text: #E8EEFF;
+  --muted: rgba(232,238,255,0.5);
+  --c1: #00E5FF; /* Asesoría */
+  --c2: #A855F7; /* Académica */
+  --c3: #F59E0B; /* Financiera */
+  --c4: #F43F5E; /* Admisión */
+  --c5: #10B981; /* Viaje */
+  --c6: #3B82F6; /* College */
+  --c7: #F97316; /* PGWP */
+  --c8: #FF3B5C; /* RP */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── COSMOS BACKGROUND ── */
+#cosmos-canvas {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NEBULA ORBS ── */
+.nebula {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+  animation: nebulaFloat 20s ease-in-out infinite alternate;
+}
+.nebula-1 { width:600px; height:600px; background:radial-gradient(circle,rgba(0,229,255,0.07) 0%,transparent 70%); top:-100px; left:-200px; animation-delay:0s; }
+.nebula-2 { width:500px; height:500px; background:radial-gradient(circle,rgba(168,85,247,0.07) 0%,transparent 70%); top:40%; right:-150px; animation-delay:-7s; }
+.nebula-3 { width:400px; height:400px; background:radial-gradient(circle,rgba(244,63,94,0.06) 0%,transparent 70%); bottom:10%; left:30%; animation-delay:-14s; }
+
+@keyframes nebulaFloat {
+  from { transform: translate(0,0) scale(1); }
+  to { transform: translate(30px,20px) scale(1.1); }
+}
+
+/* ── MAIN WRAPPER ── */
+.main-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.logo-wrap {
+  margin-bottom: 48px;
+  position: relative;
+  display: inline-block;
+}
+
+.wsw-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+  line-height: 1;
+}
+
+.wsw-logo span {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: -0.02em;
+  color: #fff;
+  display: block;
+}
+
+.wsw-logo .dot-accent {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--c1);
+  border-radius: 50%;
+  margin-left: 4px;
+  vertical-align: super;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,100% { transform:scale(1); opacity:1; }
+  50% { transform:scale(1.5); opacity:0.7; }
+}
+
+.logo-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse, rgba(0,229,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,100% { opacity:0.5; transform:scale(1); }
+  50% { opacity:1; transform:scale(1.1); }
+}
+
+.hero-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--c1);
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.3s;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 82px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.5s;
+}
+
+.hero-title .line-accent {
+  display: block;
+  background: linear-gradient(135deg, var(--c1), var(--c2), var(--c5));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(15px,2vw,18px);
+  color: var(--muted);
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.7s;
+}
+
+/* ── MISSION STATS ── */
+.mission-stats {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.9s;
+}
+
+.stat-chip {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(20px);
+}
+
+.stat-chip i { font-size: 12px; }
+
+/* ── MASTER PROGRESS ── */
+.master-progress-wrap {
+  width: 100%;
+  max-width: 700px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1.1s;
+}
+
+.master-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.master-progress-label span:last-child {
+  font-size: 20px;
+  font-weight: 800;
+  font-family: var(--font-display);
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c5));
+  border-radius: 100px;
+  transition: width 0.8s cubic-bezier(0.25,1,0.5,1);
+  width: 0%;
+  position: relative;
+}
+
+.progress-fill::after {
+  content:'';
+  position:absolute;
+  right:0; top:50%;
+  transform:translateY(-50%);
+  width:16px; height:16px;
+  background:#fff;
+  border-radius:50%;
+  box-shadow:0 0 12px var(--c1);
+}
+
+.scroll-cta {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1.3s;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  width: 36px; height: 36px;
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── PHASES SECTION ── */
+.phases-section {
+  padding-top: 40px;
+}
+
+/* ── PHASE BLOCK ── */
+.phase-block {
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.phase-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding: 24px 28px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  backdrop-filter: blur(30px);
+  position: relative;
+  overflow: hidden;
+}
+
+.phase-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--phase-color);
+}
+
+.phase-header::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, var(--phase-color-glow), transparent 70%);
+  pointer-events: none;
+}
+
+.phase-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--phase-color);
+  background: rgba(255,255,255,0.05);
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--phase-color-border);
+  white-space: nowrap;
+}
+
+.phase-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: var(--phase-color-glow);
+  border: 1px solid var(--phase-color-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.phase-info { flex: 1; }
+
+.phase-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(18px,2.5vw,26px);
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+
+.phase-info p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.phase-badge-preview {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.badge-icon-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.badge-emoji {
+  font-size: 36px;
+  display: block;
+  filter: grayscale(1) opacity(0.3);
+  transition: all 0.5s ease;
+}
+
+.badge-emoji.unlocked {
+  filter: grayscale(0) opacity(1);
+  animation: badgePop 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+}
+
+@keyframes badgePop {
+  0% { transform:scale(0.5) rotate(-10deg); }
+  100% { transform:scale(1) rotate(0deg); }
+}
+
+.badge-label {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+  font-weight: 600;
+  max-width: 80px;
+  line-height: 1.3;
+}
+
+.badge-icon-wrap.unlocked .badge-label { color: var(--phase-color); }
+
+/* ── MILESTONES GRID ── */
+.milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* ── MILESTONE CARD ── */
+.milestone-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 18px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25,1,0.5,1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.milestone-card:hover {
+  background: var(--glass-hover);
+  border-color: var(--phase-color-border);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.milestone-card.done {
+  border-color: var(--phase-color-border);
+  background: var(--phase-color-glass);
+}
+
+.milestone-card.done::after {
+  content:'';
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, var(--phase-color-micro), transparent);
+  pointer-events:none;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-icon-wrap {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--phase-color-glow);
+  border: 1px solid var(--phase-color-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.card-checkbox {
+  width: 24px; height: 24px;
+  border-radius: 8px;
+  border: 2px solid var(--glass-border);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.card-checkbox:hover { border-color: var(--phase-color); }
+
+.card-checkbox.checked {
+  background: var(--phase-color);
+  border-color: var(--phase-color);
+}
+
+.card-checkbox.checked i {
+  color: #000;
+  font-size: 12px;
+}
+
+.milestone-num {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--phase-color);
+  text-transform: uppercase;
+}
+
+.milestone-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.milestone-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  flex:1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.open-detail-btn {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--phase-color);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+.milestone-card:hover .open-detail-btn { gap: 10px; }
+
+.alert-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #F43F5E;
+  animation: alertPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes alertPulse {
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.5);opacity:0.6}
+}
+
+/* ── PHASE PROGRESS BAR ── */
+.phase-progress-row {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phase-progress-bar {
+  flex:1;
+  height: 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.phase-progress-fill {
+  height: 100%;
+  background: var(--phase-color);
+  border-radius: 100px;
+  transition: width 0.8s cubic-bezier(0.25,1,0.5,1);
+  width: 0%;
+}
+
+.phase-progress-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--phase-color);
+  white-space: nowrap;
+}
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3,6,15,0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  background: rgba(8,14,30,0.97);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.modal-overlay.open .modal-box {
+  transform: scale(1) translateY(0);
+}
+
+.modal-box::-webkit-scrollbar { width:4px; }
+.modal-box::-webkit-scrollbar-track { background:transparent; }
+.modal-box::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.1); border-radius:2px; }
+
+.modal-hero {
+  padding: 32px 32px 24px;
+  position: relative;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.modal-stripe {
+  position: absolute;
+  top:0; left:0; right:0;
+  height: 3px;
+  border-radius: 28px 28px 0 0;
+}
+
+.modal-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.modal-phase-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 100px;
+  border: 1px solid;
+}
+
+.modal-close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--glass-border);
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.modal-close:hover { background:rgba(255,255,255,0.12); color:#fff; }
+
+.modal-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.modal-big-icon {
+  width: 60px; height: 60px;
+  border-radius: 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: clamp(20px,3vw,26px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.modal-body {
+  padding: 28px 32px 32px;
+}
+
+.modal-section {
+  margin-bottom: 24px;
+}
+
+.modal-section h4 {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.modal-section p, .modal-section li {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.modal-section ul { padding-left: 0; list-style: none; }
+.modal-section ul li { padding-left: 20px; position:relative; margin-bottom:8px; }
+.modal-section ul li::before { content:'▸'; position:absolute;left:0; color:var(--modal-color); }
+
+.insight-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid var(--modal-color);
+  border-radius: 0 12px 12px 0;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.insight-box .insight-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--modal-color);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.alert-box {
+  background: rgba(244,63,94,0.08);
+  border: 1px solid rgba(244,63,94,0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.alert-box .alert-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #F43F5E;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tip-box {
+  background: rgba(16,185,129,0.07);
+  border: 1px solid rgba(16,185,129,0.15);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.tip-box .tip-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #10B981;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.official-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--modal-color);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.official-link:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateX(4px);
+}
+
+.official-link i { font-size: 14px; }
+
+.modal-action-row {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-complete {
+  flex: 1;
+  min-width: 180px;
+  padding: 14px 24px;
+  border-radius: 14px;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-complete-primary {
+  background: var(--modal-color);
+  color: #000;
+}
+
+.btn-complete-primary:hover { opacity:0.85; transform:translateY(-2px); }
+
+.btn-complete-secondary {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--glass-border);
+  color: var(--text);
+}
+
+.btn-complete-secondary:hover { background: rgba(255,255,255,0.1); }
+
+/* ── BADGE CELEBRATION OVERLAY ── */
+.badge-celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.badge-celebration.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.badge-cel-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3,6,15,0.7);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.badge-cel-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.4s cubic-bezier(0.34,1.56,0.64,1), transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.badge-celebration.active .badge-cel-backdrop { opacity: 1; }
+.badge-celebration.active .badge-cel-card { opacity: 1; transform: scale(1); }
+.badge-celebration.hiding .badge-cel-backdrop { opacity: 0; transition: opacity 0.4s ease 0.1s; }
+.badge-celebration.hiding .badge-cel-card { opacity: 0; transform: scale(1.1); transition: opacity 0.35s ease, transform 0.35s ease; }
+
+.badge-cel-rings {
+  position: absolute;
+  width: 180px; height: 180px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.badge-cel-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255,215,0,0.6);
+  opacity: 0;
+}
+
+.badge-cel-ring.animate { animation: ringExpand 1.2s ease-out forwards; }
+.badge-cel-ring:nth-child(2) { border-color: rgba(255,215,0,0.35); }
+.badge-cel-ring:nth-child(2).animate { animation: ringExpand 1.2s ease-out 0.15s forwards; }
+.badge-cel-ring:nth-child(3) { border-color: rgba(255,215,0,0.15); }
+.badge-cel-ring:nth-child(3).animate { animation: ringExpand 1.2s ease-out 0.3s forwards; }
+
+@keyframes ringExpand {
+  0%   { transform: scale(0.3); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.badge-cel-emoji-wrap {
+  width: 110px; height: 110px;
+  background: radial-gradient(circle, rgba(255,215,0,0.15), transparent 70%);
+  border: 1.5px solid rgba(255,215,0,0.25);
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 54px;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 0 40px rgba(255,215,0,0.2), 0 20px 60px rgba(0,0,0,0.5);
+  animation: badgeShimmer 2s ease-in-out infinite alternate;
+}
+
+@keyframes badgeShimmer {
+  from { box-shadow: 0 0 30px rgba(255,215,0,0.15), 0 20px 60px rgba(0,0,0,0.5); }
+  to   { box-shadow: 0 0 60px rgba(255,215,0,0.35), 0 20px 60px rgba(0,0,0,0.5); }
+}
+
+.badge-cel-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #FFD700;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.badge-cel-name {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  text-shadow: 0 0 30px rgba(255,215,0,0.4);
+}
+
+.badge-cel-sub {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.badge-cel-confetti {
+  position: absolute;
+  inset: -80px;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 7px; height: 7px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: confettiFall 1.4s ease-out forwards;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(0.5); opacity: 0; }
+}
+
+/* ── WHATSAPP ── */
+.wa-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 500;
+  width: 60px; height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+  animation: waFloat 3s ease-in-out infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.wa-fab:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 12px 40px rgba(37,211,102,0.6);
+}
+
+.wa-fab i { font-size: 28px; color: #fff; }
+
+.wa-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(37,211,102,0.4);
+  animation: waPulse 2s ease-out infinite;
+}
+
+@keyframes waFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes waPulse { 0%{transform:scale(1);opacity:0.6} 100%{transform:scale(1.6);opacity:0} }
+
+.wa-tooltip {
+  position: absolute;
+  right: 72px;
+  background: rgba(8,14,30,0.97);
+  border: 1px solid rgba(37,211,102,0.2);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #25D366;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.wa-fab:hover .wa-tooltip { opacity: 1; }
+
+/* ── SECTION DIVIDER ── */
+.mission-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 60px 0 40px;
+  opacity: 0.3;
+}
+
+.mission-divider::before,
+.mission-divider::after {
+  content:'';
+  flex:1;
+  height: 1px;
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
+}
+
+.mission-divider span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 60px;
+}
+
+.footer p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+.footer strong { color: var(--c1); }
+
+/* ── STARS CANVAS ── */
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .phase-header { flex-wrap: wrap; }
+  .phase-badge-preview { display: none; }
+  .milestones-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 36px; }
+  .modal-box { border-radius: 20px; }
+  .modal-hero, .modal-body { padding: 24px 20px; }
+  .modal-title { font-size: 20px; }
+  .mission-stats { gap: 8px; }
+  .stat-chip { font-size: 11px; padding: 8px 14px; }
+  .wa-fab { width: 52px; height: 52px; bottom: 20px; right: 20px; }
+}
+
+@media (max-width: 480px) {
+  .phase-header { padding: 18px 16px; gap: 12px; }
+  .phase-icon { width: 44px; height: 44px; font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Cosmos Canvas -->
+<canvas id="cosmos-canvas"></canvas>
+
+<!-- Nebula Orbs -->
+<div class="nebula nebula-1"></div>
+<div class="nebula nebula-2"></div>
+<div class="nebula nebula-3"></div>
+
+<!-- Main Wrapper -->
+<div class="main-wrap">
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="logo-wrap">
+      <div class="logo-glow"></div>
+      <div class="wsw-logo">
+        <span>WE<span class="dot-accent"></span></span>
+        <span>STUDY</span>
+        <span>WORLD</span>
+      </div>
+    </div>
+
+    <p class="hero-eyebrow">🍁 Mission Canada — Tu Hoja de Ruta Oficial</p>
+
+    <h1 class="hero-title">
+      Pathway to
+      <span class="line-accent">Success</span>
+    </h1>
+
+    <p class="hero-sub">Tu guía definitiva de 3 a 5 años hacia Canadá. Desde el primer check de viabilidad hasta tu Residencia Permanente. Cada paso, cada paso, cada logro — aquí.</p>
+
+    <div class="mission-stats">
+      <div class="stat-chip" style="color:var(--c1);border-color:rgba(0,229,255,0.15)">
+        <i class="fas fa-flag-checkered"></i> 8 Fases
+      </div>
+      <div class="stat-chip" style="color:var(--c2);border-color:rgba(168,85,247,0.15)">
+        <i class="fas fa-route"></i> 22 Pasos
+      </div>
+      <div class="stat-chip" style="color:var(--c3);border-color:rgba(245,158,11,0.15)">
+        <i class="fas fa-trophy"></i> 8 Insignias
+      </div>
+      <div class="stat-chip" style="color:var(--c5);border-color:rgba(16,185,129,0.15)">
+        <i class="fas fa-calendar-alt"></i> 3-5 Años
+      </div>
+    </div>
+
+    <div class="master-progress-wrap">
+      <div class="master-progress-label">
+        <span>Progreso Global de tu Misión</span>
+        <span id="global-pct">0%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="global-bar"></div>
+      </div>
+    </div>
+
+    <div class="scroll-cta">
+      <span>Iniciar Misión</span>
+      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+    </div>
+  </section>
+
+  <!-- ── PHASES ── -->
+  <section class="phases-section" id="phases">
+
+    <!-- PHASE 1 -->
+    <div class="phase-block" data-phase="1" style="--phase-color:var(--c1);--phase-color-glow:rgba(0,229,255,0.1);--phase-color-border:rgba(0,229,255,0.15);--phase-color-glass:rgba(0,229,255,0.03);--phase-color-micro:rgba(0,229,255,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 01</div>
+        <div class="phase-icon">🤝</div>
+        <div class="phase-info">
+          <h2>Asesoría Gratuita y Perfilamiento</h2>
+          <p>Evaluación técnica y honesta de tu viabilidad migratoria hacia Canadá</p>
+        </div>
+        <div class="phase-badge-preview" data-phase-badge="1">
+          <div class="badge-icon-wrap" id="badge-1">
+            <span class="badge-emoji">🎯</span>
+            <div class="badge-label">Perfil Viable Aprobado</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-1"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-1">0/1</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(1)" data-mid="1" data-phase="1">
+          <div class="card-top">
+            <div class="card-icon-wrap">🔍</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,1)" id="check-1"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 01</div>
+          <div class="milestone-title">WSW Check: Viabilidad Real</div>
+          <div class="milestone-desc">Evaluación técnica de tu perfil, expectativas y honestos sobre si Canadá es tu destino.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-divider"><span>Misión en curso</span></div>
+
+    <!-- PHASE 2 -->
+    <div class="phase-block" data-phase="2" style="--phase-color:var(--c2);--phase-color-glow:rgba(168,85,247,0.1);--phase-color-border:rgba(168,85,247,0.15);--phase-color-glass:rgba(168,85,247,0.03);--phase-color-micro:rgba(168,85,247,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 02</div>
+        <div class="phase-icon">🎓</div>
+        <div class="phase-info">
+          <h2>Definición Académica</h2>
+          <p>Tu ruta de idioma y la selección del College con blindaje legal para el PGWP</p>
+        </div>
+        <div class="phase-badge-preview">
+          <div class="badge-icon-wrap" id="badge-2">
+            <span class="badge-emoji">🛡️</span>
+            <div class="badge-label">Programa Blindado</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-2"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-2">0/2</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(2)" data-mid="2" data-phase="2">
+          <div class="card-top">
+            <div class="card-icon-wrap">🗣️</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,2)" id="check-2"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 02</div>
+          <div class="milestone-title">Ruta de Idioma (Pathway Virtual)</div>
+          <div class="milestone-desc">Nivelación estratégica de inglés con ILSC desde tu país — sin gastar en Canadá.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(3)" data-mid="3" data-phase="2">
+          <div class="card-top">
+            <div class="card-icon-wrap">🏫</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,3)" id="check-3"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 03</div>
+          <div class="milestone-title">Selección Institucional (Séneca)</div>
+          <div class="milestone-desc">Elegimos el College que maximiza tu perfil y garantiza elegibilidad al PGWP vía auditoría legal.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+            <div class="alert-dot" title="Auditoría crítica"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-divider"><span>Estrategia Financiera</span></div>
+
+    <!-- PHASE 3 -->
+    <div class="phase-block" data-phase="3" style="--phase-color:var(--c3);--phase-color-glow:rgba(245,158,11,0.1);--phase-color-border:rgba(245,158,11,0.15);--phase-color-glass:rgba(245,158,11,0.03);--phase-color-micro:rgba(245,158,11,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 03</div>
+        <div class="phase-icon">💰</div>
+        <div class="phase-info">
+          <h2>Estrategia Financiera</h2>
+          <p>Fondos, solvencia IRCC y opciones de crédito educativo para hacerlo posible</p>
+        </div>
+        <div class="phase-badge-preview">
+          <div class="badge-icon-wrap" id="badge-3">
+            <span class="badge-emoji">💎</span>
+            <div class="badge-label">Finanzas Sólidas</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-3"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-3">0/2</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(4)" data-mid="4" data-phase="3">
+          <div class="card-top">
+            <div class="card-icon-wrap">🏦</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,4)" id="check-4"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 04</div>
+          <div class="milestone-title">Solvencia Oficial IRCC 2026</div>
+          <div class="milestone-desc">Los montos exactos y vigentes que el gobierno canadiense exige demostrar en tu visa.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+            <div class="alert-dot" title="Dato crítico actualizado"></div>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(5)" data-mid="5" data-phase="3">
+          <div class="card-top">
+            <div class="card-icon-wrap">📋</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,5)" id="check-5"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 05</div>
+          <div class="milestone-title">Soluciones de Crédito Educativo</div>
+          <div class="milestone-desc">ICETEX y Bancolombia Sufi: opciones reales si los fondos son el obstáculo.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-divider"><span>Proceso de Admisión</span></div>
+
+    <!-- PHASE 4 -->
+    <div class="phase-block" data-phase="4" style="--phase-color:var(--c4);--phase-color-glow:rgba(244,63,94,0.1);--phase-color-border:rgba(244,63,94,0.15);--phase-color-glass:rgba(244,63,94,0.03);--phase-color-micro:rgba(244,63,94,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 04</div>
+        <div class="phase-icon">📄</div>
+        <div class="phase-info">
+          <h2>Admisión y Visa</h2>
+          <p>Documentación exacta, cronograma en reversa y tramitación de tu Study Permit</p>
+        </div>
+        <div class="phase-badge-preview">
+          <div class="badge-icon-wrap" id="badge-4">
+            <span class="badge-emoji">📬</span>
+            <div class="badge-label">Documentación Completa</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-4"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-4">0/5</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(6)" data-mid="6" data-phase="4">
+          <div class="card-top">
+            <div class="card-icon-wrap">📑</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,6)" id="check-6"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 06</div>
+          <div class="milestone-title">Documentación para Séneca</div>
+          <div class="milestone-desc">Lista completa de documentos, traducciones y el application fee de $90 CAD.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(7)" data-mid="7" data-phase="4">
+          <div class="card-top">
+            <div class="card-icon-wrap">📜</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,7)" id="check-7"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 07</div>
+          <div class="milestone-title">LOA — Carta de Aceptación</div>
+          <div class="milestone-desc">La Letter of Acceptance del College: tu primera victoria en el proceso.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(8)" data-mid="8" data-phase="4">
+          <div class="card-top">
+            <div class="card-icon-wrap">🏛️</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,8)" id="check-8"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 08</div>
+          <div class="milestone-title">PAL — Carta Provincial</div>
+          <div class="milestone-desc">Provincial Attestation Letter de Ontario: el permiso provincial para aplicar al Study Permit.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(9)" data-mid="9" data-phase="4">
+          <div class="card-top">
+            <div class="card-icon-wrap">🗓️</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,9)" id="check-9"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 09</div>
+          <div class="milestone-title">Cronograma en Reversa (Sep. 2026)</div>
+          <div class="milestone-desc">El plan maestro de fechas: LOA, PAL, visa y Pathway Virtual para llegar a tiempo.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+            <div class="alert-dot"></div>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(10)" data-mid="10" data-phase="4">
+          <div class="card-top">
+            <div class="card-icon-wrap">🩺</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,10)" id="check-10"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 10</div>
+          <div class="milestone-title">Exámenes Médicos Oficiales</div>
+          <div class="milestone-desc">Con médicos panelistas autorizados por IRCC — ni uno diferente sirve.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-divider"><span>✈️ Despegue</span></div>
+
+    <!-- PHASE 5 -->
+    <div class="phase-block" data-phase="5" style="--phase-color:var(--c5);--phase-color-glow:rgba(16,185,129,0.1);--phase-color-border:rgba(16,185,129,0.15);--phase-color-glass:rgba(16,185,129,0.03);--phase-color-micro:rgba(16,185,129,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 05</div>
+        <div class="phase-icon">✈️</div>
+        <div class="phase-info">
+          <h2>Aprobación y Aterrizaje</h2>
+          <p>POE Letter, Reunión de Despedida, Border Control y primeros trámites en suelo canadiense</p>
+        </div>
+        <div class="phase-badge-preview">
+          <div class="badge-icon-wrap" id="badge-5">
+            <span class="badge-emoji">🍁</span>
+            <div class="badge-label">Llegada Exitosa</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-5"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-5">0/4</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(11)" data-mid="11" data-phase="5">
+          <div class="card-top">
+            <div class="card-icon-wrap">✅</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,11)" id="check-11"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 11</div>
+          <div class="milestone-title">Aprobación de Visa (POE Letter)</div>
+          <div class="milestone-desc">Luz verde oficial de la embajada canadiense — qué es y qué no es la POE Letter.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(12)" data-mid="12" data-phase="5">
+          <div class="card-top">
+            <div class="card-icon-wrap">🎒</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,12)" id="check-12"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 12</div>
+          <div class="milestone-title">Reunión de Despedida y Maleta</div>
+          <div class="milestone-desc">Simulacro de migración con tu asesor WSW y tips de maleta inteligente para Canadá.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(13)" data-mid="13" data-phase="5">
+          <div class="card-top">
+            <div class="card-icon-wrap">🛂</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,13)" id="check-13"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 13</div>
+          <div class="milestone-title">Border Control (Día Cero)</div>
+          <div class="milestone-desc">Tu entrevista con CBSA y el hack crítico de "May accept employment" que no puedes ignorar.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+            <div class="alert-dot"></div>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(14)" data-mid="14" data-phase="5">
+          <div class="card-top">
+            <div class="card-icon-wrap">🪪</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,14)" id="check-14"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 14</div>
+          <div class="milestone-title">Setup Legal (SIN y Banco)</div>
+          <div class="milestone-desc">Trámites obligatorios en tus primeros 3 días: número SIN y apertura de cuenta bancaria.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-divider"><span>📚 Vida Académica</span></div>
+
+    <!-- PHASE 6 -->
+    <div class="phase-block" data-phase="6" style="--phase-color:var(--c6);--phase-color-glow:rgba(59,130,246,0.1);--phase-color-border:rgba(59,130,246,0.15);--phase-color-glass:rgba(59,130,246,0.03);--phase-color-micro:rgba(59,130,246,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 06</div>
+        <div class="phase-icon">📚</div>
+        <div class="phase-info">
+          <h2>Vida de College</h2>
+          <p>Las reglas que protegen tu futuro: Full-Time, límite laboral y tax return</p>
+        </div>
+        <div class="phase-badge-preview">
+          <div class="badge-icon-wrap" id="badge-6">
+            <span class="badge-emoji">🎓</span>
+            <div class="badge-label">Semestres Superados</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-6"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-6">0/3</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(15)" data-mid="15" data-phase="6">
+          <div class="card-top">
+            <div class="card-icon-wrap">⏰</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,15)" id="check-15"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 15</div>
+          <div class="milestone-title">La Regla de las 24 Horas</div>
+          <div class="milestone-desc">El límite laboral estricto que debes respetar — viola esto y pierdes todo.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+            <div class="alert-dot"></div>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(16)" data-mid="16" data-phase="6">
+          <div class="card-top">
+            <div class="card-icon-wrap">📖</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,16)" id="check-16"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 16</div>
+          <div class="milestone-title">Estatus Full-Time</div>
+          <div class="milestone-desc">El seguro de vida de tu futuro PGWP — siempre tiempo completo, sin excepción.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(17)" data-mid="17" data-phase="6">
+          <div class="card-top">
+            <div class="card-icon-wrap">💵</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,17)" id="check-17"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 17</div>
+          <div class="milestone-title">Declaración de Impuestos (Tax Return)</div>
+          <div class="milestone-desc">En abril recuperas dinero del gobierno canadiense — no te lo pierdas.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-divider"><span>💼 PGWP</span></div>
+
+    <!-- PHASE 7 -->
+    <div class="phase-block" data-phase="7" style="--phase-color:var(--c7);--phase-color-glow:rgba(249,115,22,0.1);--phase-color-border:rgba(249,115,22,0.15);--phase-color-glass:rgba(249,115,22,0.03);--phase-color-micro:rgba(249,115,22,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 07</div>
+        <div class="phase-icon">💼</div>
+        <div class="phase-info">
+          <h2>PGWP — Permiso Laboral</h2>
+          <p>Stop laboral, examen CLB 5, Maintained Status y tu boleto al trabajo full-time en Canadá</p>
+        </div>
+        <div class="phase-badge-preview">
+          <div class="badge-icon-wrap" id="badge-7">
+            <span class="badge-emoji">⚡</span>
+            <div class="badge-label">Trabajador Legal</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-7"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-7">0/3</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(18)" data-mid="18" data-phase="7">
+          <div class="card-top">
+            <div class="card-icon-wrap">🛑</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,18)" id="check-18"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 18</div>
+          <div class="milestone-title">Graduación y Stop Laboral</div>
+          <div class="milestone-desc">El día exacto en que recibes tus notas debes parar de trabajar — sin excepciones.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+            <div class="alert-dot"></div>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(19)" data-mid="19" data-phase="7">
+          <div class="card-top">
+            <div class="card-icon-wrap">🗣️</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,19)" id="check-19"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 19</div>
+          <div class="milestone-title">Examen de Inglés CLB 5</div>
+          <div class="milestone-desc">Nuevo requisito obligatorio del gobierno para aprobar el PGWP.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(20)" data-mid="20" data-phase="7">
+          <div class="card-top">
+            <div class="card-icon-wrap">🔄</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,20)" id="check-20"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 20</div>
+          <div class="milestone-title">Aplicar al PGWP (Maintained Status)</div>
+          <div class="milestone-desc">Submit = regreso inmediato al trabajo a tiempo completo mientras llega la aprobación.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mission-divider"><span>🍁 Residencia Permanente</span></div>
+
+    <!-- PHASE 8 -->
+    <div class="phase-block" data-phase="8" style="--phase-color:var(--c8);--phase-color-glow:rgba(255,59,92,0.1);--phase-color-border:rgba(255,59,92,0.15);--phase-color-glass:rgba(255,59,92,0.03);--phase-color-micro:rgba(255,59,92,0.05)">
+      <div class="phase-header">
+        <div class="phase-num">Fase 08</div>
+        <div class="phase-icon">🍁</div>
+        <div class="phase-info">
+          <h2>Residencia Permanente</h2>
+          <p>1,560 horas de experiencia NOC TEER, Express Entry, puntaje CRS e ITA — la meta final</p>
+        </div>
+        <div class="phase-badge-preview">
+          <div class="badge-icon-wrap" id="badge-8">
+            <span class="badge-emoji">🌟</span>
+            <div class="badge-label">Futuro Residente</div>
+          </div>
+        </div>
+      </div>
+      <div class="phase-progress-row">
+        <div class="phase-progress-bar"><div class="phase-progress-fill" id="phase-prog-8"></div></div>
+        <span class="phase-progress-text" id="phase-prog-txt-8">0/2</span>
+      </div>
+      <div class="milestones-grid">
+        <div class="milestone-card" onclick="openModal(21)" data-mid="21" data-phase="8">
+          <div class="card-top">
+            <div class="card-icon-wrap">🏗️</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,21)" id="check-21"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 21</div>
+          <div class="milestone-title">Experiencia Canadiense (NOC TEER)</div>
+          <div class="milestone-desc">1,560 horas de trabajo calificado en categorías TEER 0,1,2 o 3 del NOC.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+        <div class="milestone-card" onclick="openModal(22)" data-mid="22" data-phase="8">
+          <div class="card-top">
+            <div class="card-icon-wrap">🌟</div>
+            <div class="card-checkbox" onclick="toggleCheck(event,22)" id="check-22"><i class="fas fa-check" style="display:none"></i></div>
+          </div>
+          <div class="milestone-num">Paso 22</div>
+          <div class="milestone-title">Express Entry y ITA</div>
+          <div class="milestone-desc">Perfil Express Entry, puntaje CRS e Invitation to Apply — el final del viaje.</div>
+          <div class="card-footer">
+            <span class="open-detail-btn">Ver detalles <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><strong>We Study World</strong> · Tu asesor desde el día cero hasta tu Residencia Permanente en Canadá 🍁</p>
+    <p style="margin-top:8px">¿Dudas? Escríbenos al <strong>+57 315 074 4990</strong> · Toda la información oficial está enlazada en cada paso.</p>
+  </footer>
+</div>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/573150744990" target="_blank" class="wa-fab">
+  <div class="wa-pulse"></div>
+  <i class="fab fa-whatsapp"></i>
+  <div class="wa-tooltip">💬 Chatea con WSW</div>
+</a>
+
+<!-- Badge Celebration Overlay -->
+<div class="badge-celebration" id="badge-celebration">
+  <div class="badge-cel-backdrop"></div>
+  <div class="badge-cel-card">
+    <div class="badge-cel-confetti" id="cel-confetti"></div>
+    <div class="badge-cel-rings">
+      <div class="badge-cel-ring"></div>
+      <div class="badge-cel-ring"></div>
+      <div class="badge-cel-ring"></div>
+    </div>
+    <div class="badge-cel-emoji-wrap" id="cel-emoji">🎯</div>
+    <div class="badge-cel-tag">🏆 Insignia Desbloqueada</div>
+    <div class="badge-cel-name" id="cel-name">Perfil Viable Aprobado</div>
+    <div class="badge-cel-sub">Toca para continuar</div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal-box" id="modal-box">
+    <!-- dynamic content -->
+  </div>
+</div>
+
+<script>
+// ── COSMOS STARFIELD ──
+const canvas = document.getElementById('cosmos-canvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+
+function initCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  stars = [];
+  const count = Math.floor((canvas.width * canvas.height) / 8000);
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.2,
+      alpha: Math.random() * 0.7 + 0.1,
+      speed: Math.random() * 0.003 + 0.001,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+}
+
+function drawStars(t) {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  stars.forEach(s => {
+    const alpha = s.alpha * (0.6 + 0.4 * Math.sin(t * s.speed + s.phase));
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(200,220,255,${alpha})`;
+    ctx.fill();
+  });
+}
+
+let raf;
+function animateStars(t) {
+  drawStars(t);
+  raf = requestAnimationFrame(animateStars);
+}
+
+initCanvas();
+animateStars(0);
+window.addEventListener('resize', initCanvas);
+
+// ── PHASE CONFIG ──
+const phaseConfig = {
+  1: { color:'#00E5FF', milestones:[1], badge:'🎯', badgeLabel:'Perfil Viable Aprobado' },
+  2: { color:'#A855F7', milestones:[2,3], badge:'🛡️', badgeLabel:'Programa Blindado' },
+  3: { color:'#F59E0B', milestones:[4,5], badge:'💎', badgeLabel:'Finanzas Sólidas' },
+  4: { color:'#F43F5E', milestones:[6,7,8,9,10], badge:'📬', badgeLabel:'Documentación Completa' },
+  5: { color:'#10B981', milestones:[11,12,13,14], badge:'🍁', badgeLabel:'Llegada Exitosa' },
+  6: { color:'#3B82F6', milestones:[15,16,17], badge:'🎓', badgeLabel:'Semestres Superados' },
+  7: { color:'#F97316', milestones:[18,19,20], badge:'⚡', badgeLabel:'Trabajador Legal' },
+  8: { color:'#FF3B5C', milestones:[21,22], badge:'🌟', badgeLabel:'Futuro Residente' }
+};
+
+const totalMilestones = 22;
+const checked = {};
+
+// ── MODAL DATA ──
+const modalData = {
+  1: {
+    phase: 1,
+    icon: '🔍',
+    title: 'WSW Check: Viabilidad Real',
+    content: `
+      <div class="modal-section">
+        <h4>¿En qué consiste?</h4>
+        <p>En We Study World nuestra primera regla es la honestidad. En esta etapa, tu consultor educativo evaluará a profundidad tu <strong>edad, historial académico, experiencia laboral y nivel de inglés actual</strong>. Hablaremos de tus expectativas reales (estudio, trabajo, posibilidad de viajar con tu familia) para asegurarnos de que el proyecto de vida que tienes en mente es legal y alcanzable bajo las normativas actuales de migración de Canadá.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">💡 Transparencia Total WSW</span>
+        Seremos 100% claros contigo. Te diremos si tu perfil es viable para una visa en Canadá o si, por tu background, es más estratégico contemplar otro destino. No vendemos por vender; <strong>construimos proyectos viables</strong>.
+      </div>
+      <div class="modal-section">
+        <h4>¿Qué evaluamos?</h4>
+        <ul>
+          <li>Edad y etapa de vida actual</li>
+          <li>Nivel académico (bachiller, técnico, universitario)</li>
+          <li>Nivel de inglés real (no el que crees tener)</li>
+          <li>Historial migratorio y viajes anteriores</li>
+          <li>Situación financiera base</li>
+          <li>Expectativas familiares y personales</li>
+        </ul>
+      </div>
+      <div class="links-section">
+        <a href="https://calendly.com" target="_blank" class="official-link"><i class="fas fa-calendar-check"></i> Agendar Asesoría Gratuita con WSW</a>
+      </div>`
+  },
+  2: {
+    phase: 2,
+    icon: '🗣️',
+    title: 'Ruta de Idioma (Pathway Virtual)',
+    content: `
+      <div class="modal-section">
+        <h4>¿Qué es el Pathway Virtual?</h4>
+        <p>Basado en tu nivel de inglés actual, estructuraremos tu preparación. Para tu caso específico, haremos un <strong>Bundle</strong>: un programa Pathway Virtual de <strong>12 semanas con ILSC</strong> que puedes tomar desde Colombia sin salir de tu país.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">💡 ¿Por qué virtual desde tu país?</span>
+        <ul style="margin-top:8px;padding-left:0;list-style:none">
+          <li style="padding-left:20px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;color:#A855F7">▸</span>Ahorras miles de dólares en rentas y manutención canadiense mientras no puedes trabajar.</li>
+          <li style="padding-left:20px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;color:#A855F7">▸</span>Puedes seguir trabajando en tu país de origen mientras el trámite de visa avanza.</li>
+          <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:#A855F7">▸</span>ILSC emitirá una <strong>carta de certificación oficial</strong> al terminar que reemplaza los exigentes exámenes IELTS/TOEFL para tu admisión al College.</li>
+        </ul>
+      </div>
+      <div class="links-section">
+        <a href="https://www.ilsc.com/programs/university-pathway/" target="_blank" class="official-link"><i class="fas fa-external-link-alt"></i> Ver Programas ILSC University Pathway</a>
+      </div>`
+  },
+  3: {
+    phase: 2,
+    icon: '🏫',
+    title: 'Selección Institucional (Séneca)',
+    content: `
+      <div class="modal-section">
+        <h4>¿Por qué Séneca Polytechnic?</h4>
+        <p>Séneca es uno de los Colleges más reconocidos de Ontario. Pero más allá del prestigio, la selección del programa correcto es lo más crítico de todo el proceso.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-exclamation-triangle"></i> Auditoría Legal del CIP Code</div>
+        No todos los programas de College son elegibles para el PGWP. Antes de aplicar, WSW hace una <strong>auditoría legal del CIP Code</strong> del programa para garantizar que esté en la lista aprobada por IRCC. Un error aquí significa estudiar 2 años y no poder obtener el permiso de trabajo. En universidades esto no aplica (todos sus programas califican).
+      </div>
+      <div class="modal-section">
+        <h4>Lo que evaluamos en el College:</h4>
+        <ul>
+          <li>Elegibilidad del CIP Code para PGWP</li>
+          <li>Duración del programa (mínimo 2 años)</li>
+          <li>Salidas laborales reales en el mercado canadiense</li>
+          <li>Ubicación geográfica y costo de vida</li>
+          <li>Reputación y empleabilidad de egresados</li>
+        </ul>
+      </div>
+      <div class="links-section">
+        <a href="https://www.senecapolytechnic.ca" target="_blank" class="official-link"><i class="fas fa-university"></i> Sitio Oficial Séneca Polytechnic</a>
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html" target="_blank" class="official-link"><i class="fas fa-list-check"></i> Lista de DLI Designadas por IRCC</a>
+      </div>`
+  },
+  4: {
+    phase: 3,
+    icon: '🏦',
+    title: 'Solvencia Oficial IRCC 2026',
+    content: `
+      <div class="modal-section">
+        <h4>Montos vigentes 2026 (confirmados)</h4>
+        <p>Para obtener tu Study Permit, debes demostrarle al gobierno canadiense que cuentas con suficientes fondos para sostenerte durante tus estudios.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">📊 Monto Base Oficial 2026</span>
+        <p style="font-size:22px;font-weight:800;color:#F59E0B;margin:8px 0">CA$22,895</p>
+        <p style="font-size:13px">Monto mínimo de manutención exigido por IRCC para un estudiante solo. Este monto puede variar si viajan acompañantes (cónyuge, hijos).</p>
+      </div>
+      <div class="modal-section">
+        <h4>¿Cómo demuestro los fondos?</h4>
+        <ul>
+          <li>Extractos bancarios de los últimos 6 meses</li>
+          <li>Certificados de depósito a término fijo (CDT)</li>
+          <li>Carta de patrocinador con historial financiero</li>
+          <li>Carta de aprobación de crédito educativo</li>
+        </ul>
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html" target="_blank" class="official-link"><i class="fas fa-dollar-sign"></i> Requisitos Financieros Oficiales IRCC</a>
+      </div>`
+  },
+  5: {
+    phase: 3,
+    icon: '📋',
+    title: 'Soluciones de Crédito Educativo',
+    content: `
+      <div class="modal-section">
+        <h4>Si los fondos son el obstáculo, hay soluciones</h4>
+        <p>Muchos estudiantes calificados dejan ir su oportunidad creyendo que no tienen los fondos. WSW te conecta con las opciones de financiamiento reales del mercado colombiano.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">🏛️ ICETEX — Crédito Internacional</span>
+        <ul style="margin-top:8px;padding-left:0;list-style:none">
+          <li style="padding-left:20px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;color:#F59E0B">▸</span>Financiamiento de hasta <strong>USD $25,000</strong></li>
+          <li style="padding-left:20px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;color:#F59E0B">▸</span>Tasa de interés: <strong>IPC + 8%</strong> anual</li>
+          <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:#F59E0B">▸</span>Pensado específicamente para estudios en el exterior</li>
+        </ul>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">🏦 Sufi Bancolombia — Crédito Educativo</span>
+        <p>Crédito educativo para estudios en el exterior con condiciones competitivas. Consulta la tasa vigente directamente con el asesor comercial de Bancolombia.</p>
+      </div>
+      <div class="links-section">
+        <a href="https://www.icetex.gov.co/portal/Inicio/EstudiaenelExterior" target="_blank" class="official-link"><i class="fas fa-graduation-cap"></i> Créditos Internacionales ICETEX</a>
+        <a href="https://www.bancolombia.com/personas/creditos/educacion" target="_blank" class="official-link"><i class="fas fa-university"></i> Crédito Educativo Sufi Bancolombia</a>
+      </div>`
+  },
+  6: {
+    phase: 4,
+    icon: '📑',
+    title: 'Documentación para Séneca',
+    content: `
+      <div class="modal-section">
+        <h4>Lista completa de documentos requeridos</h4>
+        <ul>
+          <li>Pasaporte vigente (mínimo 2 años de validez)</li>
+          <li>Diplomas académicos originales (bachiller y universidad si aplica)</li>
+          <li>Transcripts / Notas oficiales de todos los estudios</li>
+          <li>Traducciones oficiales al inglés por traductor certificado</li>
+          <li>Application fee de <strong>$90 CAD</strong></li>
+          <li>Carta de propósito (Statement of Purpose)</li>
+          <li>Certificado de nivel de inglés (o certificación ILSC)</li>
+          <li>Resumen de vida (CV académico y laboral)</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <div class="tip-label"><i class="fas fa-lightbulb"></i> Tip WSW</div>
+        Las traducciones deben ser realizadas por traductores oficiales certificados. WSW te indica traductores de confianza para evitar rechazos por este motivo.
+      </div>
+      <div class="links-section">
+        <a href="https://www.senecapolytechnic.ca/admissions/how-to-apply/international.html" target="_blank" class="official-link"><i class="fas fa-file-alt"></i> Portal de Admisiones Internacionales — Séneca</a>
+      </div>`
+  },
+  7: {
+    phase: 4,
+    icon: '📜',
+    title: 'LOA — Letter of Acceptance',
+    content: `
+      <div class="modal-section">
+        <h4>¿Qué es la LOA?</h4>
+        <p>La <strong>Letter of Acceptance (LOA)</strong> es la carta oficial de Séneca confirmando que fuiste admitido al programa. Es uno de los documentos más importantes del proceso y es obligatoria para solicitar tu Study Permit.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Tiempo de respuesta estimado</h4>
+        <p>Séneca tarda generalmente entre <strong>4 a 8 semanas</strong> en emitir la LOA tras recibir tu aplicación completa. WSW hace seguimiento activo a tu proceso.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">💡 Importante</span>
+        Sin la LOA, no puedes solicitar el PAL provincial ni el Study Permit. Es el primer domino — asegúrate de aplicar con todos los documentos correctos desde el inicio para no perder tiempo.
+      </div>
+      <div class="links-section">
+        <a href="https://www.senecapolytechnic.ca/admissions.html" target="_blank" class="official-link"><i class="fas fa-envelope-open-text"></i> Estado de Aplicación — Portal Séneca</a>
+      </div>`
+  },
+  8: {
+    phase: 4,
+    icon: '🏛️',
+    title: 'PAL — Provincial Attestation Letter',
+    content: `
+      <div class="modal-section">
+        <h4>¿Qué es el PAL?</h4>
+        <p>La <strong>Provincial Attestation Letter (PAL)</strong> es un documento emitido por la <strong>provincia de Ontario</strong> que certifica que tu lugar de estudio fue asignado bajo el nuevo sistema de cupos provinciales implementado en 2024.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-exclamation-triangle"></i> Requisito Nuevo — Obligatorio</div>
+        Desde 2024, IRCC exige el PAL junto con la LOA para procesar la mayoría de los Study Permits. Sin él, tu aplicación de visa puede ser rechazada. Séneca gestiona el PAL directamente con Ontario para sus estudiantes admitidos.
+      </div>
+      <div class="modal-section">
+        <h4>¿Cómo se obtiene?</h4>
+        <p>Una vez que Séneca te acepta y pagas tu cupo, ellos emiten el PAL en coordinación con el gobierno de Ontario. El tiempo de emisión es aproximadamente <strong>2 a 4 semanas</strong> después del depósito.</p>
+      </div>
+      <div class="links-section">
+        <a href="https://www.ontario.ca/page/ontario-attestation-letter" target="_blank" class="official-link"><i class="fas fa-file-certificate"></i> Información Oficial del PAL — Ontario</a>
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/news/2024/01/new-measures-for-international-students.html" target="_blank" class="official-link"><i class="fas fa-info-circle"></i> Nuevas Medidas IRCC para Estudiantes</a>
+      </div>`
+  },
+  9: {
+    phase: 4,
+    icon: '🗓️',
+    title: 'Cronograma en Reversa (Sep. 2026)',
+    content: `
+      <div class="modal-section">
+        <h4>El plan maestro hacia Septiembre 2026</h4>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">📅 Línea de Tiempo Inversa</span>
+        <ul style="margin-top:8px;padding-left:0;list-style:none">
+          <li style="padding-left:20px;position:relative;margin-bottom:10px;font-size:14px"><span style="position:absolute;left:0;color:#F43F5E">▸</span><strong>Sep 2026:</strong> Primer día de clases en Séneca — la meta.</li>
+          <li style="padding-left:20px;position:relative;margin-bottom:10px;font-size:14px"><span style="position:absolute;left:0;color:#F43F5E">▸</span><strong>Ago 2026:</strong> Aterrizas en Canadá. Terminas tus 12 semanas de ILSC virtual.</li>
+          <li style="padding-left:20px;position:relative;margin-bottom:10px;font-size:14px"><span style="position:absolute;left:0;color:#F43F5E">▸</span><strong>Jun 2026:</strong> Inicias tus 12 semanas de Pathway Virtual con ILSC.</li>
+          <li style="padding-left:20px;position:relative;margin-bottom:10px;font-size:14px"><span style="position:absolute;left:0;color:#F43F5E">▸</span><strong>Abr 2026:</strong> Ontario emite tu PAL. Con LOA + PAL listos, <strong>aplicamos a tu visa</strong>.</li>
+          <li style="padding-left:20px;position:relative;margin-bottom:10px;font-size:14px"><span style="position:absolute;left:0;color:#F43F5E">▸</span><strong>Feb–Mar 2026:</strong> Recibes tu LOA de Séneca. Pagas depósito de cupo.</li>
+          <li style="padding-left:20px;position:relative;font-size:14px"><span style="position:absolute;left:0;color:#F43F5E">▸</span><strong>Ene 2026:</strong> Enviamos tu aplicación completa a Séneca. <strong>¡Ya debes tener tu documentación lista!</strong></li>
+        </ul>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-clock"></i> Alerta de Tiempos Críticos</div>
+        El Study Permit desde Colombia toma <strong>8 a 12 semanas</strong>. Al aplicar en Abril, garantizamos tu pasaporte listo antes de que termines ILSC en Agosto. <strong>No se puede ser tarde en ningún paso.</strong>
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application/check-processing-times.html" target="_blank" class="official-link"><i class="fas fa-hourglass-half"></i> Tiempos Oficiales de Procesamiento IRCC en Vivo</a>
+      </div>`
+  },
+  10: {
+    phase: 4,
+    icon: '🩺',
+    title: 'Exámenes Médicos Oficiales',
+    content: `
+      <div class="modal-section">
+        <h4>¿Cuándo y dónde?</h4>
+        <p>Dependiendo de tu nacionalidad y duración del programa, IRCC puede exigir exámenes médicos. Te indicaremos en qué momento exacto del proceso debes ir a realizártelos.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-exclamation-circle"></i> Solo con Panelistas Autorizados</div>
+        Los exámenes DEBEN hacerse única y exclusivamente con médicos <strong>panelistas autorizados por IRCC</strong>. Un médico regular, aunque sea el mejor especialista del país, NO sirve. El sistema rechaza los resultados automáticamente si el médico no está en la lista oficial.
+      </div>
+      <div class="modal-section">
+        <h4>¿Qué incluye el examen?</h4>
+        <ul>
+          <li>Examen físico general</li>
+          <li>Radiografía de tórax (para detectar tuberculosis)</li>
+          <li>Exámenes de laboratorio (sangre, orina)</li>
+          <li>Evaluación de salud mental básica</li>
+        </ul>
+      </div>
+      <div class="links-section">
+        <a href="https://secure.cic.gc.ca/pp-md/pp-list.aspx" target="_blank" class="official-link"><i class="fas fa-user-md"></i> Directorio Oficial de Médicos Panelistas IRCC</a>
+      </div>`
+  },
+  11: {
+    phase: 5,
+    icon: '✅',
+    title: 'Aprobación de Visa (POE Letter)',
+    content: `
+      <div class="modal-section">
+        <h4>¡Tu visa fue aprobada!</h4>
+        <p>Recibirás en tu portal de IRCC una <strong>Port of Entry (POE) Letter of Introduction</strong>. Este es uno de los momentos más emocionantes de todo el proceso.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-info-circle"></i> ¿Qué ES y qué NO ES la POE Letter?</div>
+        <p>La POE Letter <strong>NO es tu permiso de estudio físico</strong>. Es solo la autorización oficial para que puedas abordar tu vuelo hacia Canadá. Tu permiso físico te lo entregará el oficial de aduanas (CBSA) cuando aterrices en el aeropuerto canadiense.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">💡 Qué hacer al recibirla</span>
+        Imprímela en papel de calidad. Lleva impresión + digital. También lleva: pasaporte, LOA, prueba de fondos y carta de Pathway ILSC. Prepárate para las preguntas del oficial — la Reunión de Despedida con WSW te preparará para esto.
+      </div>`
+  },
+  12: {
+    phase: 5,
+    icon: '🎒',
+    title: 'Reunión de Despedida y Maleta Inteligente',
+    content: `
+      <div class="modal-section">
+        <h4>La Reunión de Despedida WSW</h4>
+        <p>Antes de comprar tus vuelos, agendaremos tu <strong>Reunión de Despedida oficial</strong> con tu asesor WSW para hacer un <strong>simulacro real de preguntas</strong> del oficial de migración canadiense (CBSA). Saber responder correctamente puede ser la diferencia entre entrar o ser enviado de regreso.</p>
+      </div>
+      <div class="tip-box">
+        <div class="tip-label"><i class="fas fa-suitcase"></i> Tip WSW — Maleta Inteligente</div>
+        Si viajas para iniciar clases en Otoño/Invierno, <strong>NO compres chaquetas pesadas ni abrigos en Colombia</strong>. La ropa de invierno colombiana no soporta el clima canadiense (-15°C a -30°C). Lleva térmicos básicos de buena calidad y pide tus adaptadores, sábanas, abrigos y utensilios en <strong>Amazon.ca</strong> para que lleguen directo a tu nuevo alojamiento el día que aterrices.
+      </div>
+      <div class="modal-section">
+        <h4>¿Qué llevar en la maleta?</h4>
+        <ul>
+          <li>Documentos originales importantes (en bolsa hermética)</li>
+          <li>Ropa casual y de transición (no de invierno)</li>
+          <li>Medicamentos personales con receta médica</li>
+          <li>Dinero en efectivo en CAD (mínimo $500 para primeros días)</li>
+          <li>Láptop para estudios</li>
+          <li>Adaptador de corriente universal</li>
+        </ul>
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/new-immigrants/prepare-life-canada.html" target="_blank" class="official-link"><i class="fas fa-plane-arrival"></i> Guía Pre-Llegada Oficial IRCC</a>
+        <a href="https://www.amazon.ca/s?k=estudiante+internaciona" target="_blank" class="official-link"><i class="fab fa-amazon"></i> Amazon.ca — Wishlist para Estudiantes</a>
+      </div>`
+  },
+  13: {
+    phase: 5,
+    icon: '🛂',
+    title: 'Border Control — Día Cero',
+    content: `
+      <div class="modal-section">
+        <h4>Tu entrevista con CBSA</h4>
+        <p>Al aterrizar, te dirigirás a la fila de migración y mostrarás al oficial de la <strong>Canada Border Services Agency (CBSA)</strong>: tu POE Letter, tu carta de aceptación del College y tus pruebas de fondos. El oficial imprimirá tu <strong>Study Permit físico</strong> en ese momento.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-exclamation-triangle"></i> 🚨 HACK CRÍTICO — Antes de alejarte de la taquilla</div>
+        Antes de guardar el permiso y alejarte de la ventanilla, <strong>léelo completo en ese instante</strong>. Debe decir explícitamente: <em>"May accept employment on or off campus"</em>. Si el oficial olvidó incluir esa frase, <strong>exige amable y firmemente que lo corrijan ahí mismo</strong>. Salir del aeropuerto con ese error te costará meses sin poder trabajar legalmente en Canadá.
+      </div>
+      <div class="tip-box">
+        <div class="tip-label"><i class="fas fa-comments"></i> Qué decirle al oficial</div>
+        Sé honesto, tranquilo y directo. Dice que vienes a estudiar en Séneca, que tienes fondos suficientes, y que tu programa incluye Pathway de inglés. Nunca menciones intenciones de inmigrar permanentemente (aunque sea tu plan) — tu permiso actual es de estudiante.
+      </div>
+      <div class="links-section">
+        <a href="https://www.cbsa-asfc.gc.ca/contact/menu-eng.html" target="_blank" class="official-link"><i class="fas fa-passport"></i> Guía Fronteriza Oficial — CBSA</a>
+      </div>`
+  },
+  14: {
+    phase: 5,
+    icon: '🪪',
+    title: 'Setup Legal — SIN y Banco',
+    content: `
+      <div class="modal-section">
+        <h4>Trámites obligatorios: primeros 3 días</h4>
+        <p>Para poder trabajar legalmente y que tus empleadores te paguen, necesitas tramitar inmediatamente dos cosas: tu número SIN y tu cuenta bancaria.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">🪪 Social Insurance Number (SIN)</span>
+        El SIN es un número de 9 dígitos que te identifica fiscalmente en Canadá. Es equivalente a la cédula para efectos laborales. Puedes tramitarlo en línea o ir físicamente a la oficina de <strong>Service Canada</strong> más cercana. Sin él, ningún empleador puede contratarte legalmente.
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">🏦 Apertura de Cuenta Bancaria</span>
+        Bancos como <strong>Scotiabank, TD Bank y CIBC</strong> tienen <strong>paquetes especiales para recién llegados</strong> sin cuota de manejo e incluso ofrecen <strong>bonos de regalo en efectivo</strong> por abrir tu cuenta con ellos durante el primer año. ¡Aprovéchalo!
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/employment-social-development/services/sin.html" target="_blank" class="official-link"><i class="fas fa-id-card"></i> Tramitar tu Número SIN — Service Canada</a>
+        <a href="https://www.scotiabank.com/ca/en/personal/bank-accounts/newcomers-to-canada.html" target="_blank" class="official-link"><i class="fas fa-university"></i> Cuenta para Recién Llegados — Scotiabank</a>
+      </div>`
+  },
+  15: {
+    phase: 6,
+    icon: '⏰',
+    title: 'La Regla de las 24 Horas',
+    content: `
+      <div class="modal-section">
+        <h4>¡Ya puedes trabajar! Pero con límites estrictos</h4>
+        <p>Con tu Study Permit activo y estando en periodo de clases, puedes buscar trabajo off-campus de inmediato.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-exclamation-triangle"></i> 🚨 ALERTA DE DEPORTACIÓN</div>
+        La ley canadiense establece un límite estricto de <strong>24 horas semanales</strong> para trabajo off-campus durante periodos de clases. Trabajar <strong>25 horas o más en UNA SOLA semana</strong> es violar tu visa. Las consecuencias son:
+        <ul style="margin-top:8px;padding-left:0;list-style:none">
+          <li style="padding-left:20px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;color:#F43F5E">▸</span>Causal de deportación inmediata</li>
+          <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:#F43F5E">▸</span>Pérdida automática del derecho al futuro PGWP</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <div class="tip-label"><i class="fas fa-calendar-check"></i> Excepción Importante</div>
+        Durante tus <strong>vacaciones programadas oficiales</strong> del calendario del College (ej. break de verano, Navidad), <strong>sí puedes trabajar a tiempo completo</strong> (40+ horas). Guarda siempre el calendario académico oficial.
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html" target="_blank" class="official-link"><i class="fas fa-balance-scale"></i> Normativa Oficial de Trabajo Off-Campus — IRCC</a>
+      </div>`
+  },
+  16: {
+    phase: 6,
+    icon: '📖',
+    title: 'Estatus Full-Time — El Seguro de tu PGWP',
+    content: `
+      <div class="modal-section">
+        <h4>¿Por qué es tan crítico?</h4>
+        <p>Para tener derecho al <strong>Post-Graduation Work Permit (PGWP)</strong>, IRCC exige que mantengas estatus de estudiante <strong>Full-Time (Tiempo Completo) durante TODOS los semestres</strong> de tu programa.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-exclamation-triangle"></i> Consecuencia de Bajar a Part-Time</div>
+        Si repruebas demasiadas materias y el College te reduce la carga académica a Part-Time en algún semestre (que no sea el último de la carrera), <strong>perderás el derecho a aplicar al PGWP</strong>. Esto cierra la puerta a la residencia permanente vía experiencia canadiense.
+      </div>
+      <div class="tip-box">
+        <div class="tip-label"><i class="fas fa-lightbulb"></i> Estrategia WSW</div>
+        Si estás teniendo dificultades académicas, habla con tu asesor académico del College y con WSW antes de que tu status baje. Hay opciones como tutorías, cursos de apoyo y ajustes de carga que pueden evitar llegar a ese punto.
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/extend-study-permit/eligibility.html" target="_blank" class="official-link"><i class="fas fa-file-shield"></i> Condiciones de Estatus para PGWP — IRCC</a>
+      </div>`
+  },
+  17: {
+    phase: 6,
+    icon: '💵',
+    title: 'Declaración de Impuestos — Tax Return',
+    content: `
+      <div class="modal-section">
+        <h4>Dinero del gobierno que te pertenece</h4>
+        <p>En <strong>abril de cada año</strong>, debes presentar tu declaración de impuestos con la <strong>Canada Revenue Agency (CRA)</strong>, incluso si trabajaste poco o nada durante el año.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">💡 Hack Financiero WSW — Dinero Gratis</span>
+        Al hacer tu declaración como estudiante de bajos ingresos, te vuelves elegible automáticamente para:
+        <ul style="margin-top:8px;padding-left:0;list-style:none">
+          <li style="padding-left:20px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;color:#3B82F6">▸</span><strong>GST/HST Credit:</strong> Cheque trimestral del gobierno federal</li>
+          <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:#3B82F6">▸</span><strong>Canada Carbon Tax Rebate:</strong> Dinero adicional trimestral</li>
+        </ul>
+        <p style="margin-top:8px">Te enviarán dinero libre de impuestos directo a tu cuenta bancaria. <strong>¡Es dinero gratis por hacer las cosas bien!</strong></p>
+      </div>
+      <div class="modal-section">
+        <h4>¿Cómo presentar la declaración?</h4>
+        <ul>
+          <li>Herramienta gratuita <strong>TurboTax Free</strong> o <strong>Wealthsimple Tax</strong></li>
+          <li>Consultar el programa <strong>Community Volunteer Income Tax Program (CVITP)</strong></li>
+          <li>WSW te orienta en tu primer tax return</li>
+        </ul>
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/students.html" target="_blank" class="official-link"><i class="fas fa-file-invoice-dollar"></i> Guía de Impuestos para Estudiantes — CRA</a>
+        <a href="https://www.canada.ca/en/revenue-agency/services/child-family-benefits/gsthstc-apply.html" target="_blank" class="official-link"><i class="fas fa-hand-holding-dollar"></i> Crédito GST/HST — Cómo Aplicar</a>
+      </div>`
+  },
+  18: {
+    phase: 7,
+    icon: '🛑',
+    title: 'Graduación y Stop Laboral Inmediato',
+    content: `
+      <div class="modal-section">
+        <h4>¡Felicidades — terminaste tus estudios!</h4>
+        <p>Pero en este momento preciso, muchos cometen el error más costoso de todo el proceso.</p>
+      </div>
+      <div class="alert-box">
+        <div class="alert-label"><i class="fas fa-exclamation-triangle"></i> 🚨 ATENCIÓN INMEDIATA — Stop Laboral</div>
+        El día exacto en que recibes tus <strong>notas finales oficiales (Transcripts)</strong> y la <strong>Completion Letter</strong> del College, tu estatus de estudiante finaliza legalmente. <strong>Debes dejar de trabajar inmediatamente ese mismo día</strong>, aunque tu permiso de estudio físico aún tenga meses de vigencia en papel. Seguir trabajando después de recibir las notas finales es ilegal hasta que apliques y hagas Submit de tu PGWP.
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">💡 ¿Por qué este error es tan común?</span>
+        El permiso de estudio físico puede decir que vence, por ejemplo, en diciembre, pero si recibes tus notas en mayo, tu autorización legal para trabajar terminó en mayo. Muchos estudiantes asumen que pueden seguir hasta que el papel expire — ese error puede invalidar toda la aplicación de PGWP.
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html" target="_blank" class="official-link"><i class="fas fa-stop-circle"></i> Cuándo Dejar de Trabajar — IRCC</a>
+      </div>`
+  },
+  19: {
+    phase: 7,
+    icon: '🗣️',
+    title: 'Requisito de Inglés CLB 5',
+    content: `
+      <div class="modal-section">
+        <h4>Nuevo requisito oficial del gobierno canadiense</h4>
+        <p>Para aplicar al PGWP, el gobierno canadiense introdujo en 2024 un <strong>nuevo requisito obligatorio de idioma</strong>: debes presentar un examen oficial de inglés y demostrar un nivel mínimo de <strong>CLB 5 (Canadian Language Benchmark 5)</strong> en todas las bandas.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Exámenes aceptados</h4>
+        <ul>
+          <li><strong>CELPIP General</strong> — El más recomendado para Colombia (se presenta en computador)</li>
+          <li><strong>IELTS General Training</strong> — Opción clásica con reconocimiento global</li>
+        </ul>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">💡 Estrategia WSW</span>
+        No esperes hasta el último semestre para preparar este examen. Si desde Fase 2 hiciste tu Pathway con ILSC y mantuviste tus clases en inglés, el CLB 5 es un nivel perfectamente alcanzable. WSW te orientará sobre cuándo presentarlo estratégicamente.
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html" target="_blank" class="official-link"><i class="fas fa-language"></i> Nuevos Requisitos de Idioma para PGWP — IRCC</a>
+        <a href="https://www.celpip.ca" target="_blank" class="official-link"><i class="fas fa-pen-to-square"></i> Portal Oficial CELPIP</a>
+        <a href="https://www.ielts.org" target="_blank" class="official-link"><i class="fas fa-globe"></i> Portal Oficial IELTS</a>
+      </div>`
+  },
+  20: {
+    phase: 7,
+    icon: '🔄',
+    title: 'Aplicar al PGWP y Maintained Status',
+    content: `
+      <div class="modal-section">
+        <h4>El momento de la liberación laboral</h4>
+        <p>Una vez tienes en mano tus notas, la Completion Letter y los resultados del examen de inglés, WSW somete tu aplicación online al PGWP.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">⚡ Maintained Status — La Magia del Submit</span>
+        En el segundo exacto en que damos clic en <strong>'Submit'</strong> y pagamos la tarifa gubernamental del PGWP, entras automáticamente en <strong>Maintained Status (Estatus Mantenido)</strong>. A partir de ese momento, puedes <strong>volver a trabajar legalmente y a tiempo completo</strong> mientras esperas a que llegue la aprobación física por correo. No hay que esperar semanas ni meses — es inmediato.
+      </div>
+      <div class="modal-section">
+        <h4>Duración del PGWP</h4>
+        <p>La duración de tu PGWP es generalmente igual a la duración de tu programa de estudios, hasta un máximo de 3 años. Si tu programa duró 2 años, tendrás 2 años de Open Work Permit para trabajar en cualquier empresa de Canadá.</p>
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/apply.html" target="_blank" class="official-link"><i class="fas fa-paper-plane"></i> Aplicar al PGWP — Portal IRCC</a>
+      </div>`
+  },
+  21: {
+    phase: 8,
+    icon: '🏗️',
+    title: 'Experiencia Canadiense (NOC TEER)',
+    content: `
+      <div class="modal-section">
+        <h4>El año de trabajo calificado que te abre la RP</h4>
+        <p>Con tu PGWP aprobado, tu nuevo objetivo es calificar a la Residencia Permanente bajo la categoría <strong>Canadian Experience Class (CEC)</strong> del Express Entry.</p>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">📊 El requisito mínimo</span>
+        <p style="font-size:18px;font-weight:800;color:#FF3B5C;margin:8px 0">1,560 horas</p>
+        <p style="font-size:13px">Equivalente a 1 año de trabajo a tiempo completo (40h/semana × 39 semanas). El trabajo debe pertenecer a las categorías <strong>TEER 0, 1, 2 o 3</strong> del National Occupational Classification (NOC).</p>
+      </div>
+      <div class="modal-section">
+        <h4>Categorías TEER que califican:</h4>
+        <ul>
+          <li><strong>TEER 0:</strong> Puestos de Gerencia y Dirección</li>
+          <li><strong>TEER 1:</strong> Profesiones que requieren universitaria</li>
+          <li><strong>TEER 2:</strong> Tecnólogos, técnicos especializados</li>
+          <li><strong>TEER 3:</strong> Trabajos técnicos con capacitación formal</li>
+        </ul>
+      </div>
+      <div class="tip-box">
+        <div class="tip-label"><i class="fas fa-receipt"></i> Recomendación WSW</div>
+        Guarda celosamente todos tus <strong>recibos de pago (Paystubs)</strong> mensuales. Al finalizar el año, WSW te dará el formato exacto de carta laboral que debes pedirle a tu empleador, con tus horas y responsabilidades detalladas.
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/canadian-experience-class.html" target="_blank" class="official-link"><i class="fas fa-hard-hat"></i> Canadian Experience Class — IRCC</a>
+        <a href="https://noc.esdc.gc.ca" target="_blank" class="official-link"><i class="fas fa-search"></i> Buscador Oficial de Categorías TEER — NOC</a>
+      </div>`
+  },
+  22: {
+    phase: 8,
+    icon: '🌟',
+    title: 'Express Entry y la ITA — La Meta Final',
+    content: `
+      <div class="modal-section">
+        <h4>La invitación oficial a ser Residente Permanente</h4>
+        <p>Con tu año de experiencia, tu título canadiense y un buen resultado de inglés, estás listo para crear tu perfil de <strong>Express Entry</strong>.</p>
+      </div>
+      <div class="modal-section">
+        <h4>¿Cómo funciona Express Entry?</h4>
+        <ul>
+          <li>Creas un perfil online con toda tu información</li>
+          <li>IRCC te asigna un puntaje <strong>CRS (Comprehensive Ranking System)</strong></li>
+          <li>Entras a la "piscina de candidatos" junto a miles de personas</li>
+          <li>El gobierno hace sorteos periódicos (cada 2-4 semanas) e invita a los candidatos con mayor puntaje</li>
+          <li>Si eres invitado, recibes una <strong>ITA (Invitation to Apply)</strong></li>
+          <li>Con la ITA, sometes tus documentos y en ~6 meses eres <strong>Residente Permanente</strong></li>
+        </ul>
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">🎯 Tu ventaja competitiva</span>
+        Estudiantes que cursaron en Canadá, tienen experiencia laboral canadiense y buen inglés típicamente obtienen puntajes CRS de <strong>470-520 puntos</strong>, lo cual es competitivo para los sorteos de Canadian Experience Class (CEC). WSW te acompañará en todo este proceso final.
+      </div>
+      <div class="insight-box">
+        <span class="insight-label">🍁 ¡El día más grande!</span>
+        We Study World estuvo contigo desde el día cero hasta este momento. Desde aquella primera asesoría gratuita hasta tu tarjeta de Residente Permanente. Este es el cierre del viaje y el inicio de tu nueva vida.
+      </div>
+      <div class="links-section">
+        <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/works.html" target="_blank" class="official-link"><i class="fas fa-globe-americas"></i> Cómo Funciona Express Entry — IRCC</a>
+        <a href="https://www.cic.gc.ca/english/immigrate/skilled/crs-tool.asp" target="_blank" class="official-link"><i class="fas fa-calculator"></i> Calculadora Oficial de Puntos CRS</a>
+      </div>`
+  }
+};
+
+// ── PHASE MILESTONES MAP ──
+const phaseMilestones = {
+  1: [1],
+  2: [2,3],
+  3: [4,5],
+  4: [6,7,8,9,10],
+  5: [11,12,13,14],
+  6: [15,16,17],
+  7: [18,19,20],
+  8: [21,22]
+};
+
+// ── STATE ──
+const checkedState = {};
+
+function toggleCheck(e, mid) {
+  e.stopPropagation();
+  const cb = document.getElementById(`check-${mid}`);
+  const icon = cb.querySelector('i');
+  const card = cb.closest('.milestone-card');
+  const phase = parseInt(card.dataset.phase);
+
+  checkedState[mid] = !checkedState[mid];
+
+  if (checkedState[mid]) {
+    cb.classList.add('checked');
+    icon.style.display = 'block';
+    card.classList.add('done');
+    createParticles(cb);
+  } else {
+    cb.classList.remove('checked');
+    icon.style.display = 'none';
+    card.classList.remove('done');
+  }
+
+  updateProgress();
+  checkBadge(phase);
+  saveState();
+}
+
+function updateProgress() {
+  const total = 22;
+  const done = Object.values(checkedState).filter(Boolean).length;
+  const pct = Math.round((done / total) * 100);
+
+  document.getElementById('global-bar').style.width = pct + '%';
+  document.getElementById('global-pct').textContent = pct + '%';
+
+  // Phase progress
+  Object.entries(phaseMilestones).forEach(([phase, mids]) => {
+    const phaseDone = mids.filter(m => checkedState[m]).length;
+    const phaseTotal = mids.length;
+    const ppct = Math.round((phaseDone / phaseTotal) * 100);
+    const bar = document.getElementById(`phase-prog-${phase}`);
+    const txt = document.getElementById(`phase-prog-txt-${phase}`);
+    if (bar) bar.style.width = ppct + '%';
+    if (txt) txt.textContent = `${phaseDone}/${phaseTotal}`;
+  });
+}
+
+function checkBadge(phase) {
+  const mids = phaseMilestones[phase];
+  const allDone = mids.every(m => checkedState[m]);
+  const badge = document.getElementById(`badge-${phase}`);
+  const emoji = badge?.querySelector('.badge-emoji');
+
+  if (allDone && emoji && !emoji.classList.contains('unlocked')) {
+    emoji.classList.add('unlocked');
+    badge.classList.add('unlocked');
+    showBadgeToast(phaseConfig[phase].badge, phaseConfig[phase].badgeLabel);
+  } else if (!allDone && emoji) {
+    emoji.classList.remove('unlocked');
+    badge.classList.remove('unlocked');
+  }
+}
+
+function showBadgeToast(emoji, label) {
+  document.getElementById('cel-emoji').textContent = emoji;
+  document.getElementById('cel-name').textContent = label;
+
+  // restart ring animations
+  document.querySelectorAll('.badge-cel-ring').forEach(r => {
+    r.classList.remove('animate');
+    void r.offsetWidth; // reflow
+    r.classList.add('animate');
+  });
+
+  // spawn confetti
+  const container = document.getElementById('cel-confetti');
+  container.innerHTML = '';
+  const colors = ['#FFD700','#00E5FF','#A855F7','#10B981','#F43F5E','#fff','#F59E0B'];
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-piece';
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 70 + Math.random() * 110;
+    const delay = (Math.random() * 0.35).toFixed(2);
+    p.style.cssText = `
+      left:50%; top:50%;
+      background:${colors[i % colors.length]};
+      --tx:${Math.round(Math.cos(angle)*dist)}px;
+      --ty:${Math.round(Math.sin(angle)*dist)}px;
+      --rot:${Math.round(Math.random()*540)}deg;
+      animation-delay:${delay}s;
+      border-radius:${Math.random()>0.5?'50%':'2px'};
+    `;
+    container.appendChild(p);
+  }
+
+  const cel = document.getElementById('badge-celebration');
+  cel.classList.remove('hiding');
+  cel.classList.add('active');
+
+  let timer = setTimeout(hideCelebration, 3200);
+  cel.onclick = () => { clearTimeout(timer); hideCelebration(); };
+}
+
+function hideCelebration() {
+  const cel = document.getElementById('badge-celebration');
+  cel.classList.add('hiding');
+  cel.onclick = null;
+  setTimeout(() => { cel.classList.remove('active','hiding'); }, 450);
+}
+
+// ── PARTICLES ──
+function createParticles(el) {
+  const rect = el.getBoundingClientRect();
+  const colors = ['#00E5FF','#A855F7','#F59E0B','#10B981','#F43F5E'];
+  for (let i = 0; i < 8; i++) {
+    const p = document.createElement('div');
+    p.style.cssText = `
+      position:fixed;
+      left:${rect.left + rect.width/2}px;
+      top:${rect.top + rect.height/2}px;
+      width:6px;height:6px;
+      border-radius:50%;
+      background:${colors[i % colors.length]};
+      pointer-events:none;
+      z-index:9999;
+      transition:all 0.8s cubic-bezier(0.25,1,0.5,1);
+    `;
+    document.body.appendChild(p);
+    const angle = (i / 8) * Math.PI * 2;
+    const dist = 40 + Math.random() * 30;
+    setTimeout(() => {
+      p.style.transform = `translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`;
+      p.style.opacity = '0';
+    }, 10);
+    setTimeout(() => p.remove(), 800);
+  }
+}
+
+// ── MODAL ──
+function openModal(mid) {
+  const data = modalData[mid];
+  if (!data) return;
+
+  const phase = data.phase;
+  const color = phaseConfig[phase].color;
+  const phaseName = ['','Asesoría','Académica','Financiera','Admisión','Viaje','College','PGWP','Residencia'][phase];
+
+  const box = document.getElementById('modal-box');
+  box.style.setProperty('--modal-color', color);
+
+  box.innerHTML = `
+    <div class="modal-hero">
+      <div class="modal-stripe" style="background:${color}"></div>
+      <div class="modal-top-row">
+        <span class="modal-phase-tag" style="color:${color};border-color:${color}33">Fase ${String(phase).padStart(2,'0')} · ${phaseName}</span>
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-icon-title">
+        <div class="modal-big-icon" style="background:${color}18;border:1px solid ${color}30">${data.icon}</div>
+        <h2 class="modal-title">${data.title}</h2>
+      </div>
+    </div>
+    <div class="modal-body" style="--modal-color:${color}">
+      ${data.content}
+      <div class="modal-action-row">
+        <button class="btn-complete btn-complete-primary" style="background:${color}" onclick="markDoneFromModal(${mid})">
+          <i class="fas fa-check-circle"></i>
+          <span id="modal-btn-txt-${mid}">${checkedState[mid] ? 'Marcar como Pendiente' : 'Marcar como Completado'}</span>
+        </button>
+        <button class="btn-complete btn-complete-secondary" onclick="closeModal()">
+          <i class="fas fa-times"></i> Cerrar
+        </button>
+      </div>
+    </div>`;
+
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => { box.scrollTop = 0; }, 0);
+}
+
+function markDoneFromModal(mid) {
+  const cb = document.getElementById(`check-${mid}`);
+  const phase = parseInt(document.querySelector(`[data-mid="${mid}"]`).dataset.phase);
+  const icon = cb.querySelector('i');
+  const card = cb.closest('.milestone-card');
+
+  checkedState[mid] = !checkedState[mid];
+  if (checkedState[mid]) {
+    cb.classList.add('checked');
+    icon.style.display = 'block';
+    card.classList.add('done');
+    createParticles(cb);
+    closeModal();
+  } else {
+    cb.classList.remove('checked');
+    icon.style.display = 'none';
+    card.classList.remove('done');
+  }
+  updateProgress();
+  checkBadge(phase);
+  saveState();
+
+  const btn = document.getElementById(`modal-btn-txt-${mid}`);
+  if (btn) btn.textContent = checkedState[mid] ? 'Marcar como Pendiente' : 'Marcar como Completado';
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ── SCROLL INTERSECTION OBSERVER ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.phase-block').forEach(el => observer.observe(el));
+
+// ── LOCAL STORAGE ──
+function saveState() {
+  try { localStorage.setItem('wsw_progress', JSON.stringify(checkedState)); } catch(e){}
+}
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem('wsw_progress');
+    if (saved) {
+      const data = JSON.parse(saved);
+      Object.keys(data).forEach(mid => {
+        if (data[mid]) {
+          checkedState[parseInt(mid)] = true;
+          const cb = document.getElementById(`check-${mid}`);
+          if (cb) {
+            cb.classList.add('checked');
+            const icon = cb.querySelector('i');
+            if (icon) icon.style.display = 'block';
+            const card = cb.closest('.milestone-card');
+            if (card) card.classList.add('done');
+          }
+        }
+      });
+      updateProgress();
+      Object.keys(phaseMilestones).forEach(phase => {
+        const mids = phaseMilestones[phase];
+        const allDone = mids.every(m => checkedState[m]);
+        if (allDone) {
+          const badge = document.getElementById(`badge-${phase}`);
+          const emoji = badge?.querySelector('.badge-emoji');
+          if (emoji) { emoji.classList.add('unlocked'); badge.classList.add('unlocked'); }
+        }
+      });
+    }
+  } catch(e){}
+}
+
+loadState();
+updateProgress();
+
+// ── SMOOTH HERO SCROLL CTA ──
+document.querySelector('.scroll-cta')?.addEventListener('click', () => {
+  document.getElementById('phases').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
